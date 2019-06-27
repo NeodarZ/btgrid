@@ -64,7 +64,7 @@
            createGrid: function(colCount, row, rowNumber) {
              var content = '<div class="row row-' + rowNumber + '">';
              for (var i = 1; i <= colCount; i++) {
-               content = content + '<div class="col col-md-' + maxGridColumns/colCount + '">' +
+               content = content + '<div class="col-12 col-md-' + maxGridColumns/colCount + '">' +
                                    '  <div class="content">' +
                                    '    <p>Col ' + i + ' content area</p>' +
                                    '  </div>' +
