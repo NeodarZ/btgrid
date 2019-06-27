@@ -53,16 +53,17 @@
              if (this.data.colCount && this.element.getChildCount() < 1) {
                var colCount = this.data.colCount;
                var rowCount = this.data.rowCount;
+               var nameGrid = this.data.nameGrid;
                var row = this.parts['btgrid'];
                for (var i= 1;i <= rowCount;i++) {
-                 this.createGrid(colCount, row, i);
+                 this.createGrid(colCount, row, i, nameGrid);
                }
              }
            },
            //Helper functions.
            // Create grid
-           createGrid: function(colCount, row, rowNumber) {
-             var content = '<div class="row row-' + rowNumber + '">';
+           createGrid: function(colCount, row, rowNumber, nameGrid) {
+             var content = '<div class="row row-' + rowNumber + ' ' + nameGrid + '">';
              for (var i = 1; i <= colCount; i++) {
                content = content + '<div class="col-12 col-md-' + maxGridColumns/colCount + '">' +
                                    '  <div class="content">' +

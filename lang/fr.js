@@ -8,4 +8,5 @@ CKEDITOR.plugins.setLang( 'btgrid', 'fr', {
 	editBtGrid: 'Editer la grille Bootstrap',
 	numColsError:  'Choisissez un nombre de colonnes',
 	numRowsError: 'Choisissez un nombre de lignes',
+  nameGrid: 'Nom de la grille - utilisé en temps que classe',
 } );

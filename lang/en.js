@@ -8,4 +8,5 @@ CKEDITOR.plugins.setLang( 'btgrid', 'en', {
 	editBtGrid: 'Edit Bootstrap grid',
 	numColsError:  'Please select number of columns.',
 	numRowsError: 'Please insert numeric value for Number of rows.',
+  nameGrid: 'Grid name - used for the class',
 } );

@@ -8,4 +8,5 @@ CKEDITOR.plugins.setLang( 'btgrid', 'de', {
 	editBtGrid: 'Bootstrap Grid editieren',
 	numColsError:  unescape('Bitte die Anzahl der Spalten w%E4hlen.'),
 	numRowsError: unescape('Bitte nur Zahlenwerte f%FCr die Anzahl der Spalten w%E4hlen.'),
+	nameGrid: 'Name des Gitters - wird als Klasse verwendet',
 } );

@@ -26,7 +26,8 @@ CKEDITOR.dialog.add( 'btgrid', function( editor ) {
       var command = this.getName();
 
       var rowsInput = this.getContentElement('info', 'rowCount'),
-        colsInput = this.getContentElement('info', 'colCount');
+        colsInput = this.getContentElement('info', 'colCount'),
+        nameGrid = this.getContentElement('info', 'nameGrid');
       if (command == 'btgrid') {
         var grid = selection.getSelectedElement();
         // Enable or disable row and cols.
@@ -76,6 +77,18 @@ CKEDITOR.dialog.add( 'btgrid', function( editor ) {
             },
             commit: function( widget ) {
               widget.setData( 'rowCount', this.getValue());
+            }
+          },
+          {
+            id: 'nameGrid',
+            type: 'text',
+            width: '100px',
+            label: lang.nameGrid,
+            setup: function( widget ) {
+              this.setValue( widget.data.nameGrid );
+            },
+            commit: function( widget ) {
+              widget.setData( 'nameGrid', this.getValue());
             }
           }
         ]

@@ -8,4 +8,5 @@ CKEDITOR.plugins.setLang( 'btgrid', 'nl', {
 	editBtGrid: 'Bewerk de Bootstrap grid',
 	numColsError:  'Kies een aantal kolommen',
 	numRowsError: 'Kies een aantal rijen',
+  nameGrid: 'Netnaam - gebruikt en tijdsklasse',
 } );

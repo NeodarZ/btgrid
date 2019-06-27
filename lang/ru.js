@@ -8,4 +8,5 @@ CKEDITOR.plugins.setLang( 'btgrid', 'ru', {
 	editBtGrid: 'Редактировать сетку Bootstrap',
 	numColsError:  'Выберите количество колонок, пожалуйста.',
 	numRowsError: 'Введите числовое значение для Количества рядов, пожалуйста.',
+  nameGrid: 'Имя сетки - используется и класс времени',
 } );
