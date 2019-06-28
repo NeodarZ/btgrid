@@ -58,7 +58,16 @@ CKEDITOR.dialog.add( 'btgrid', function( editor ) {
             ],
             validate: validatorNum(lang.numColsError),
             setup: function( widget ) {
-              this.setValue(widget.data.colCount);
+              if (widget.name == "btgrid") {
+                selection = editor.getSelection();
+                grid = selection.getSelectedElement();
+                if (grid) {
+                  rows = grid.getChildren().getItem(0).getChildren();
+                  cols = rows.getItem(0).getChildren();
+                  widget.setData( 'colCount', cols.count());
+                  this.setValue(widget.data.colCount);
+                }
+              }
             },
             // When committing (saving) this field, set its value to the widget data.
             commit: function( widget ) {
@@ -73,7 +82,15 @@ CKEDITOR.dialog.add( 'btgrid', function( editor ) {
             label: lang.genNrRows,
             validate: validatorNum(lang.numRowsError),
             setup: function( widget ) {
-              this.setValue( widget.data.rowCount );
+              if (widget.name == "btgrid") {
+                selection = editor.getSelection();
+                grid = selection.getSelectedElement();
+                if (grid) {
+                  rows = grid.getChildren().getItem(0).getChildren();
+                  widget.setData( 'rowCount', rows.count());
+                  this.setValue(widget.data.rowCount);
+                }
+              }
             },
             commit: function( widget ) {
               widget.setData( 'rowCount', this.getValue());
