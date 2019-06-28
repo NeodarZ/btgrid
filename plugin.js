@@ -63,7 +63,7 @@
            //Helper functions.
            // Create grid
            createGrid: function(colCount, row, rowNumber, nameGrid) {
-             var content = '<div class="row row-' + rowNumber + ' ' + nameGrid + '">';
+             var content = '<div class="row row-' + rowNumber + '">';
              for (var i = 1; i <= colCount; i++) {
                content = content + '<div class="col-12 col-md-' + maxGridColumns/colCount + '">' +
                                    '  <div class="content">' +
@@ -73,6 +73,7 @@
              }
              content =content + '</div>';
              row.appendHtml(content);
+             this.addClass(nameGrid);
              this.createEditable(colCount, rowNumber);
            },
            // Create editable.
