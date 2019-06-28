@@ -1,3 +1,8 @@
+const arrayRemove = (arr, values) => {
+  return arr.filter(item => !values.includes(item));
+}
+
+
 CKEDITOR.dialog.add( 'btgrid', function( editor ) {
   var lang = editor.lang.btgrid;
   var commonLang = editor.lang.common;
@@ -102,7 +107,17 @@ CKEDITOR.dialog.add( 'btgrid', function( editor ) {
             width: '100px',
             label: lang.nameGrid,
             setup: function( widget ) {
-              this.setValue( widget.data.nameGrid );
+              if (widget.name == "btgrid") {
+                selection = editor.getSelection();
+                grid = selection.getSelectedElement();
+                if (grid) {
+                  containerGrid = grid.getChildren().getItem(0);
+                  classGrid = containerGrid.getAttribute('class');
+                  theClass = arrayRemove(classGrid.replace(/,/g, " ").split(" "), ["btgrid", "cke_widget_element", "undefined"]);
+                  widget.setData( 'nameGrid', theClass.toString());
+                  this.setValue( widget.data.nameGrid );
+                }
+              }
             },
             commit: function( widget ) {
               widget.setData( 'nameGrid', this.getValue());

@@ -50,6 +50,14 @@
            },
            // Prepare data
            data: function() {
+             if (this.data.colCount && this.data.nameGrid) {
+               selection = editor.getSelection();
+               grid = selection.getSelectedElement();
+               if (grid) {
+                containerGrid = grid.getChildren().getItem(0);
+                containerGrid.setAttribute('class', 'btgrid cke_widget_element ' + this.data.nameGrid)
+               }
+             }
              if (this.data.colCount && this.element.getChildCount() < 1) {
                var colCount = this.data.colCount;
                var rowCount = this.data.rowCount;
